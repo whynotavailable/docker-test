@@ -21,7 +21,7 @@ jobs:
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-          VERSION="${{ github.ref }}"
+          VERSION="${{ github.sha }}"
             
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
