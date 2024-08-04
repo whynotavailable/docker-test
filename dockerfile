@@ -22,6 +22,8 @@ WORKDIR /app
 COPY . .
 
 # Check cargo is visible
-RUN cargo build
+RUN cargo build --release
 
-ENTRYPOINT ["cargo", "run"]
+RUN cp target/release/docker-test .
+
+ENTRYPOINT ["./docker-test"]
